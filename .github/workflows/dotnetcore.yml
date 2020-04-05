@@ -30,4 +30,5 @@ jobs:
       run: |
         cd nuget-pack/
         pack-package.cmd
+        dir
         nuget push *.nupkg -Source https://api.nuget.org/v3/index.json
