@@ -3,10 +3,14 @@
     <RootNamespace>Org.BouncyCastle</RootNamespace>
     <AssemblyName>BouncyCastle.Crypto</AssemblyName>
     <AssemblyVersion>1.8.6</AssemblyVersion>
-    <TargetFrameworks>netstandard2.0;net20</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <DocumentationFile>BouncyCastle.Crypto.xml</DocumentationFile>
     <NoWarn>1701;1702;1705;1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(SolutionDir)\BouncyCastle.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" $(TargetFramework) == 'netstandard1.3' Or $(TargetFramework) == 'netstandard2.0' ">
     <DefineConstants>NETCORE;PORTABLE;NEW_REFLECTION;NO_THREADS</DefineConstants>
