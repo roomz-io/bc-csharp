@@ -4,6 +4,7 @@
     <AssemblyName>BouncyCastle.Crypto</AssemblyName>
     <AssemblyVersion>1.8.6</AssemblyVersion>
     <Version>$(AssemblyVersion)</Version>
+    <PackageId>Roomz.BouncyCastle.NetCore</PackageId>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <DocumentationFile>BouncyCastle.Crypto.xml</DocumentationFile>
