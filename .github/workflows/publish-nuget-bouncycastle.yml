@@ -1,0 +1,21 @@
+name: "publish nuget: Roomz.BouncyCastle.NetCore"
+run-name: "publish nuget: Roomz.BouncyCastle.NetCore"
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - run: dotnet pack BouncyCastle_NetCore.sln --configuration Release -o package
+
+      - run: dotnet nuget push package/*.nupkg --source "https://nuget.pkg.github.com/roomz-io/index.json" --api-key ${{ secrets.GITHUB_TOKEN }}
